@@ -212,7 +212,7 @@ void run_cmdline(void)
 			}
 			if (i < cmd_cnt - 1) {
 				close(STDOUT_FILENO);
-				dup(pipev[i - 1][0]);
+				dup(pipev[i][1]);
 			}
 			for (int j = 0; j < cmd_cnt - 1; j++) {
 				close(pipev[j][0]);
